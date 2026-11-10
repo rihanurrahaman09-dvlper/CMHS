@@ -1,0 +1,6 @@
+{
+  "name": "YOUR SCHOOL NAME - School Portal",
+  "description": "Authentication and role-based access control portal for students (grades 6-10), teachers, and administrators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

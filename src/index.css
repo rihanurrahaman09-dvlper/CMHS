@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8FAFC;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10px, -14px, 0) scale(1.03);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-12px, 10px, 0) scale(0.98);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes catBreathe {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+  50% {
+    transform: translate3d(0, -2px, 0) scaleY(1.025);
+  }
+}
+
+@keyframes catBlink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes catTail {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes catCelebrate {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  30% {
+    transform: translate3d(0, -10px, 0) scale(1.06);
+  }
+  60% {
+    transform: translate3d(0, -3px, 0) scale(1.02);
+  }
+}
+
+@keyframes bubblePop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 9s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 7s ease-in-out infinite;
+}
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-cat-breathe {
+  animation: catBreathe 3.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-cat-blink {
+  animation: catBlink 4.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-cat-tail {
+  animation: catTail 3.2s ease-in-out infinite;
+  transform-origin: 26px 76px;
+}
+
+.animate-cat-celebrate {
+  animation: catCelebrate 0.65s cubic-bezier(0.16, 1, 0.3, 1) 2;
+}
+
+.animate-bubble-pop {
+  animation: bubblePop 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-fade-slide-up,
+  .animate-cat-breathe,
+  .animate-cat-blink,
+  .animate-cat-tail,
+  .animate-cat-celebrate,
+  .animate-bubble-pop {
+    animation: none !important;
+  }
+}
